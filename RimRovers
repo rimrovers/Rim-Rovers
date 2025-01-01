@@ -1,0 +1,115 @@
+# Writing the simple HTML and CSS for the website to files
+base_path = "/mnt/data/Rim_Rovers_Website"
+import os
+
+os.makedirs(base_path, exist_ok=True)
+
+# HTML file content
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIM ROVERS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>RIM ROVERS</h1>
+        <p>Where Hoops and Style Collide</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#create">Create Blog</a>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Welcome to RIM ROVERS</h2>
+        <p>Discover basketball events, explore hoops-inspired style, and share your passion with the community.</p>
+    </section>
+    <section id="blogs">
+        <h2>Community Blogs</h2>
+        <p>No blogs yet. Be the first to contribute!</p>
+    </section>
+    <section id="create">
+        <h2>Create a New Blog</h2>
+        <form>
+            <input type="text" placeholder="Blog Title" required>
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Write your blog here..." rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        &copy; 2025 RIM ROVERS - All Rights Reserved
+    </footer>
+</body>
+</html>
+"""
+
+# CSS file content
+css_content = """
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #800020; /* Burgundy */
+    color: white;
+}
+header {
+    background-color: #FF4500; /* Orange */
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+header nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 18px;
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+form input, form textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+form button {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #e03e00;
+}
+footer {
+    background-color: #FF4500;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+"""
+
+# Save the HTML and CSS files
+html_path = os.path.join(base_path, "index.html")
+css_path = os.path.join(base_path, "styles.css")
+
+with open(html_path, "w") as html_file:
+    html_file.write(html_content)
+
+with open(css_path, "w") as css_file:
+    css_file.write(css_content)
+
+base_path
